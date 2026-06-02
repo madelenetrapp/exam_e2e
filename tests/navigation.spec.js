@@ -26,10 +26,14 @@ test('kan navigera mellan vyerna', async ({ page }) => {
 // 4. felet: (locator resolved to <button disabled data-testid="catalog"> Katalog </button> element is not enabled) = playwright hittar katalog, knappen är disabled, går inte att klicka på.
 // ändrar: börjar inte med katalog utan kontrollerar bara att startsidan/katalog syns och klicka sedan till de andra vyerna.
 // kör igen: GREEN
+// commit -m "fixar navigationstest genom att hantera disabled katalogknapp"
 
 // Detta hände:
 // 1. först försökte playwright klicka på Katalog
 // 2. playwright hittade den, men den var disabled
-// 3. då syndes att appen redan startar på Katalog
+// 3. då syndes att appen redan startar på Katalog (terminalen)
 // 4. ändrade testet så det först kontrollerar att Katalog/startvyn visas
 // 5. sedan klickar vidare till "Lägg till bok", "Mina böcker" och "tillbaka till Katalog"
+
+// US story:
+// ”Som en användare vill jag kunna navigera/klicka mellan katalog, lägg till bok och mina böcker så att jag kan använda allt som erbjuds på appen.”
