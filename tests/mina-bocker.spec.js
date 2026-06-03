@@ -11,6 +11,8 @@ test('kan favoritmarkera en bok och se den i favoriter', async ({ page }) => {
 })
 
 
+// Side note: Jag testade den funktionalitet som finns synlig i appen. I vyn Mina böcker visas favoriter, men jag hittade ingen separat ta bort-knapp.
+
 
 
 // Jag gör:

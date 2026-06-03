@@ -31,7 +31,7 @@ test('lägga till en ny bok med titel och författare', async ({ page }) => {
 // 1. skrev testet.
 // 2. kör testet
 // 3. testet hittar inte klicket
-// 4. lägger titeln individuellt under citationstecken (felmeddelandet: playwright väntade på texten, Platwright Testbok, Test Författare -hittade den inte på sidan)
+// 4. testet hittar inte texten "Playwright Testbok, Test Författare" (felmeddelandet: playwright väntade på texten, Platwright Testbok, Test Författare -hittade den inte på sidan)
 // 5. gör testet enklare: testar bara titeln först RED
 // 6. går tillbaka till katalog innan den letar efter boken
 // 7. kör testet
