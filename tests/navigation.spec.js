@@ -16,7 +16,7 @@ test('kan navigera mellan vyerna', async ({ page }) => {
   await expect(page.getByText('Mina böcker')).toBeVisible()
 
   await page.getByText('Katalog').click()
-  await expect(page.getByText('Välkommen!')).toBeVisible()
+  await expect(page.getByText('Välkommen!')).toBeVisible()   //se så jag kommer tillbaka till startsidan igen
 })
 
 // Jag gör:

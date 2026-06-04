@@ -3,15 +3,31 @@ import { test, expect } from '@playwright/test'
 test('kan favoritmarkera en bok och se den i favoriter', async ({ page }) => {
   await page.goto('https://ha-fed25-testning.github.io/exam_e2e/')
 
-  await page.getByTestId('star-Ormar på ett plan: En Python-berättelse').click()
+  await page.getByTestId('star-Ormar på ett plan: En Python-berättelse').click()   //hjärtat = star-
 
   await page.getByText('Mina böcker').click()
   await expect(page.getByText('Ormar på ett plan: En Python-berättelse')).toBeVisible()
 
 })
 
+test('kan ta bort en favoritbok från mina böcker', async ({ page }) => {
+  await page.goto('https://ha-fed25-testning.github.io/exam_e2e/')
 
-// Side note: Jag testade den funktionalitet som finns synlig i appen. I vyn Mina böcker visas favoriter, men jag hittade ingen separat ta bort-knapp.
+  await page.getByTestId('star-Ormar på ett plan: En Python-berättelse').click()
+
+  await page.getByText('Mina böcker').click()
+  await expect(page.getByText('Ormar på ett plan: En Python-berättelse')).toBeVisible()
+
+  await page.getByText('Katalog').click()
+
+  await page.getByTestId('star-Ormar på ett plan: En Python-berättelse').click()
+
+  await page.getByText('Mina böcker').click()
+  await expect(page.getByText('Ormar på ett plan: En Python-berättelse')).not.toBeVisible()
+})
+
+
+// Side note: Jag testade den funktionalitet som finns synlig i appen. I vyn Mina böcker visas favoriter, men jag hittade ingen separat ta bort-knapp.// åtgärdat
 
 
 

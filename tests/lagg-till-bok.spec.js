@@ -3,16 +3,16 @@ import { test, expect } from '@playwright/test'
 test('lägga till en ny bok med titel och författare', async ({ page }) => {
   await page.goto('https://ha-fed25-testning.github.io/exam_e2e/')
 
-	await page.getByText('Lägg till bok').click()    // går till formulären
+	await page.getByText('Lägg till bok').click()    // gå till formulären
 
-	await page.getByLabel('Titel').fill('Playwright Testbok')  // fyller i titel
-	await page.getByLabel('Författare').fill('Test Författare')   // fyller i författare
+	await page.getByLabel('Titel').fill('Playwright Testbok')  // fyll i titel
+	await page.getByLabel('Författare').fill('Test Författare')   // fyll i författare
 
-	await page.getByRole('button', { name: 'Lägg till ny bok' }).click() // skickar formuläret
+	await page.getByRole('button', { name: 'Lägg till ny bok' }).click() // skicka formuläret
 
-	await page.getByText('Katalog').click()  // går tillbaka till katalogen
+	await page.getByText('Katalog').click()  // gå tillbaka till katalogen
 
-	await expect(page.getByText('Playwright Testbok')).toBeVisible()  //kontrollerar att den nya boken syns i katalogen
+	await expect(page.getByText('Playwright Testbok')).toBeVisible()  //kontrollera att den nya boken syns i katalogen
 })
 
 
